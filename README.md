@@ -55,89 +55,130 @@ i915kms_load="YES"
 
 ## 12) The following optional settings in sysctl.conf have been proposed:
 
-# Enhance shared memory X11 interface
+### Enhance shared memory X11 interface
+```
 kern.ipc.shmmax=67108864
 kern.ipc.shmall=32768
+```
 
-# Enhance desktop responsiveness under high CPU use (200/224)
+### Enhance desktop responsiveness under high CPU use (200/224)
+```
 kern.sched.preempt_thresh=224
+```
 
-# Bump up maximum number of open files
+### Bump up maximum number of open files
+```
 kern.maxfiles=200000
+```
 
-# Disable PC Speaker
+### Disable PC Speaker
+```
 hw.syscons.bell=0
+```
 
-# Shared memory for Chromium
+### Shared memory for Chromium
+```
 kern.ipc.shm_allow_removed=1
+```
 
-
+### Allow users to mount removable devices
+```
 vfs.usermount=1
+```
+See http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/usb-disks.html for details
 
 ## 13) Consider the following in /etc/profile
-
+```
 LC_ALL=en_US.UTF-8; export LC_ALL
 CHARSET=UTF-8; export CHARSET
+```
 
 ## 14) Consider the following in /boot/loader.conf
 
+```
 hw.psm.synaptics_support=1
 hw.psm.trackpoint_support=1
-
 i915kms_load="YES"
+```
 
-# Devil worship in loader logo
+### Devil worship in loader logo
+```
 loader_logo="beastie"
+```
 
-# Boot-time kernel tuning
+### Boot-time kernel tuning
+```
 kern.ipc.shmseg=1024
 kern.ipc.shmmni=1024
 kern.maxproc=100000
+```
 
-# Load MMC/SD card-reader support
+### Load MMC/SD card-reader support
+```
 mmc_load="YES"
 mmcsd_load="YES"
 sdhci_load="YES"
+```
 
-# Access ATAPI devices through the CAM subsystem
+### Access ATAPI devices through the CAM subsystem
+```
 atapicam_load="YES"
+```
 
-# Filesystems in Userspace
+### Filesystems in Userspace
+```
 fuse_load="YES"
+```
 
-# Intel Core thermal sensors
+### Intel Core thermal sensors
+```
 coretemp_load="YES"
+```
 
-# AMD K8, K10, K11 thermal sensors
+### AMD K8, K10, K11 thermal sensors
+```
 #amdtemp_load="YES"
+```
 
-# In-memory filesystems
+### In-memory filesystems
+```
 tmpfs_load="YES"
+```
 
-# Asynchronous I/O
+### Asynchronous I/O
+```
 aio_load="YES"
+```
 
-# Handle Unicode on removable media
+### Handle Unicode on removable media
+```
 libiconv_load="YES"
 libmchain_load="YES"
 cd9660_iconv_load="YES"
 msdosfs_iconv_load="YES"
 
 snd_driver_load="YES"
+```
 
-15) If you want your laptop to suspend on lid close, use the following in /etc/sysctl.conf:
+# 15) If you want your laptop to suspend on lid close, use the following in /etc/sysctl.conf:
 
-# suspend on lid close
+### suspend on lid close
+```
 hw.acpi.lid_switch_state=s3
+```
 
 If you want to be able to use the battery widget in KDE, be sure you have hald enabled.
 To enable hald, add the following line to /etc/rc.conf:
+```
 hald_enable="YES"
+```
 
-# A useful FreeBSD 11 desktop installation guide I found:
+# Further links / notes
+
+### A useful FreeBSD 11 desktop installation guide I found:
 https://cooltrainer.org/a-freebsd-desktop-howto/
 
-# Real-Time Audio (DAW) in FreeBSD
+### Real-Time Audio (DAW) in FreeBSD
 A friend of mine wrote a very informative blog post about that topic and allowed me to link there (thanks, Meka!):
 http://meka.rs/blog/2017/01/25/sing-beastie-sing/
 
