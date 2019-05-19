@@ -183,9 +183,9 @@ A friend of mine wrote a very informative blog post about that topic and allowed
 http://meka.rs/blog/2017/01/25/sing-beastie-sing/
 
 ### Use middle click to initiate scrolling (Xorg+moused) - thanks to roarde for pointing this out!
-# enable mouse daemon
+#### enable mouse daemon
 #moused_enable="YES"
-# use middle trackpoint button to scroll (Xorg)
+#### use middle trackpoint button to scroll (Xorg)
 #moused_flags="-VH"
 
 
