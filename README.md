@@ -1,4 +1,6 @@
-# FreeBSD 11 notebook installation cheat-sheet
+# FreeBSD notebook installation cheat-sheet
+
+This cheat-sheet should be close-to-entirely compatible with FreeBSD versions 11, 12, and 13.
 
 ## 1) Turn off the terrible, annoying console beep:
 ```
